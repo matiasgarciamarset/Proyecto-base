@@ -7,9 +7,10 @@ El proyecto fue desarrollado con:
 * Java 1.8
 * Maven
 * Eclipse (con plugin testNG)
+* Mysql (5.7.21 MySQL Community Server)
 
 El mismo cuenta con:
-* Una API rest
-* Conexión con mySql
-* Tests unitarios
-* Inyección de dependencias
+* Una API rest (Spring)
+* Conexión con mySql (Hibernate)
+* Tests unitarios (JUnit, TestNG, Mockito)
+* Inyección de dependencias (Spring)
