@@ -1,2 +1,15 @@
-Servicio rest full basado en: https://dzone.com/articles/build-rest-web-service-using-spring
+Este proyecto fue desarrollado para servir como base en otros proyectos. El mismo fue logrado gracias a las siguientes dos paginas que brindaron información base para la configuración de spring y hibernate respectivamente.
+Spring rest full: https://dzone.com/articles/build-rest-web-service-using-spring
 Hibernate: https://examples.javacodegeeks.com/enterprise-java/hibernate/hibernate-maven-example/
+
+
+El proyecto fue desarrollado con:
+* Java 1.8
+* Maven
+* Eclipse (con plugin testNG)
+
+El mismo cuenta con:
+* Una API rest
+* Conexión con mySql
+* Tests unitarios
+* Inyección de dependencias
