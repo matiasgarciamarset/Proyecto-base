@@ -14,3 +14,12 @@ El mismo cuenta con:
 * Conexión con mySql (Hibernate)
 * Tests unitarios (JUnit, TestNG, Mockito)
 * Inyección de dependencias (Spring)
+
+## Instrucciones para correr proyecto con docker:
+* Descargar docker
+* Descargar solo el archivo de docker: MLRequest/Dockerfile
+* En la misma ruta del archivo Dockerfile ejecutar:
+```
+docker build -t imagen .
+docker run -p 8080:8080 imagen
+```
