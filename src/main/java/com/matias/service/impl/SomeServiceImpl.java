@@ -2,6 +2,7 @@ package com.matias.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.matias.dao.NameDao;
 import com.matias.model.Name;
@@ -14,9 +15,9 @@ public class SomeServiceImpl implements SomeService {
 	private NameDao nameDao;
 
 	@Override
+	@Transactional
 	public String create() {
 		Name obj = new Name();
-		obj.setId(0);
 		obj.setName("testName");
 		Boolean status = nameDao.save(obj);
 		return status ? "Correcto" : "Error";
