@@ -24,4 +24,9 @@ public class someApi {
 		return someService.create();
 	}
 	
+	@RequestMapping(value = "/count", method = RequestMethod.GET)
+	public Long count() {
+		return someService.count();
+	}
+	
 }

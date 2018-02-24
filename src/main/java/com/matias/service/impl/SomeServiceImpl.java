@@ -22,5 +22,11 @@ public class SomeServiceImpl implements SomeService {
 		Boolean status = nameDao.save(obj);
 		return status ? "Correcto" : "Error";
 	}
+	
+	@Override
+	@Transactional
+	public Long count() {
+		return nameDao.count();
+	}
 
 }

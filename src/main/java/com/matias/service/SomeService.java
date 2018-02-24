@@ -4,4 +4,5 @@ public interface SomeService {
 
 	String create();
 
+	Long count();
 }
