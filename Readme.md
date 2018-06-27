@@ -1,5 +1,5 @@
 ## Summary
-This is a base-project, that means I created this as a base for something bigger. Here you can find:
+This is a Java base-project, that means I created this as a base for something bigger. Here you can find:
 * A rest API
 * A mySql connection
 * Unit tests
