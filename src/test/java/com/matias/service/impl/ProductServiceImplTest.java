@@ -8,16 +8,16 @@ import org.testng.annotations.Test;
 
 import static org.mockito.Mockito.*;
 
-import com.matias.dao.NameDao;
-import com.matias.service.SomeService;
+import com.matias.dao.ProductDao;
+import com.matias.service.ProductService;
 
-public class NameServiceImplTest {
+public class ProductServiceImplTest {
 
 	@Mock
-	private NameDao nameDao;
+	private ProductDao productDao;
 
 	@InjectMocks
-	private SomeService someService = new SomeServiceImpl();
+	private ProductService productService = new ProductServiceImpl();
 	
 	@BeforeMethod
 	public void init() {
@@ -26,9 +26,9 @@ public class NameServiceImplTest {
 
 	@Test
 	public void testCreate_callSave() {
-		when(nameDao.save(any())).thenReturn(true);
-		someService.create();
-		verify(nameDao, times(1)).save(any());
+		when(productDao.save(any())).thenReturn(true);
+		productService.create("test");
+		verify(productDao, times(1)).save(any());
 	}
 
 }

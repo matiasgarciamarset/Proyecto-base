@@ -2,12 +2,12 @@ package com.matias.config;
 
 import java.util.Properties;
 
-import javax.sql.DataSource;
-
 import org.apache.commons.dbcp2.BasicDataSource;
+import org.flywaydb.core.Flyway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -16,6 +16,8 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import javax.sql.DataSource;
+
 @Configuration
 @PropertySource("classpath:db.properties")
 @EnableTransactionManagement
@@ -23,10 +25,19 @@ public class HibernateConfig {
 	
 	@Autowired
 	private Environment env;
+
+    @Bean(initMethod = "migrate")
+    public Flyway flyway() {
+        Flyway flyway = new Flyway();
+        flyway.setDataSource(dataSource());
+        flyway.setBaselineOnMigrate(true);
+        return flyway;
+    }
  
     @Bean
+    @DependsOn("flyway")
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-    		LocalContainerEntityManagerFactoryBean sessionFactory = new LocalContainerEntityManagerFactoryBean();
+        LocalContainerEntityManagerFactoryBean sessionFactory = new LocalContainerEntityManagerFactoryBean();
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
     		sessionFactory.setDataSource(dataSource());
         sessionFactory.setPackagesToScan("com.matias.model");

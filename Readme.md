@@ -6,29 +6,18 @@ This is a Java base-project, that means I created this as a base for something b
 * Dependency injection (Spring)
 * JPA transactions
 * A very simple docker file
+* Flyway
 
-## Descripción
-Este proyecto fue desarrollado para servir como base en otros proyectos. El mismo fue logrado gracias a las siguientes dos paginas que brindaron información base para la configuración de spring y hibernate respectivamente.
-Spring rest full: https://dzone.com/articles/build-rest-web-service-using-spring
-Hibernate: https://examples.javacodegeeks.com/enterprise-java/hibernate/hibernate-maven-example/
+## APIs:
+* status: GET <url>/api/ping
+* get all: GET <url>/api/products
+* read: GET <url>/api/products/{id}
+* create: POST <url>/api/products
 
-
-El proyecto fue desarrollado con:
-* Java 1.8
-* Maven
-* Eclipse (con plugin testNG)
-* Mysql (5.7.21 MySQL Community Server)
-
-El mismo cuenta con:
-* Una API rest (Spring)
-* Conexión con mySql (Hibernate)
-* Tests unitarios (JUnit, TestNG, Mockito)
-* Inyección de dependencias (Spring)
-
-## Instrucciones para correr proyecto con docker:
-* Descargar docker
-* Descargar solo el archivo de docker: MLRequest/Dockerfile
-* En la misma ruta del archivo Dockerfile ejecutar:
+## How to run the project with docker:
+* Download docker
+* Download only the docker file: Test/Dockerfile
+* and run:
 ```
 docker build -t imagen .
 docker run -p 8080:8080 imagen

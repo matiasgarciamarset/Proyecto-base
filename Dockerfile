@@ -5,9 +5,9 @@ MAINTAINER Matias Garcia Marset
 RUN mkdir /project \
 	&&  cd /project \
 	&&  git clone https://github.com/matiasgarciamarset/Proyecto-base.git \
-	&& cd MLRequest
+	&& cd Test
 
-WORKDIR /project/MLRequest
+WORKDIR /project/Test
 
 EXPOSE 8080
 CMD ["mvn", "tomcat7:run"]

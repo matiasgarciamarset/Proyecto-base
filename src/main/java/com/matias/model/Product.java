@@ -7,16 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/* Query para crear tabla
- CREATE TABLE test.name_table (
-  id int(20) NOT NULL AUTO_INCREMENT,
-  name varchar(255) NULL,
-  PRIMARY KEY (id)
-);
- */
 @Entity
-@Table(name = "name_table")
-public class Name {
+@Table(name = "products")
+public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
@@ -33,4 +26,11 @@ public class Name {
 		this.name = name;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
 }
